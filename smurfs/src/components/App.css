@@ -1,28 +1,43 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Chilanka|Modak&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
   text-align: center;
+  font-family: 'Chilanka', cursive;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h1 {
+  font-family: 'Modak', cursive;
+  font-size: 50px;
+  font-weight: normal;
+  color: #017ed2;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.smurf-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid #017ed2;
+  border-radius: 20px;
+  margin: 10px auto;
+  padding: 10px 1%;
 }
 
-.App-title {
-  font-size: 1.5em;
+.smurfs-wrapper {
+  padding: 10px 1%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurf-card {
+  border: 2px solid #017ed2;
+  border-radius: 20px;
+  width: 300px;
+  padding: 10px 1%;
 }
