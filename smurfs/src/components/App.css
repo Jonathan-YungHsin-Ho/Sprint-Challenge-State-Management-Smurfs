@@ -7,6 +7,9 @@
 }
 
 body {
+  background: url('../images/smurfs_0023_Zrzut-ekranu-2017-03-29-o-10.03.25-1400x788.png')
+    no-repeat center center fixed;
+  background-size: cover;
   text-align: center;
   font-family: 'Chilanka', cursive;
 }
@@ -15,12 +18,17 @@ h1 {
   font-family: 'Modak', cursive;
   font-size: 50px;
   font-weight: normal;
+  background-color: white;
   color: #017ed2;
+  width: 100%;
+  box-shadow: 3px 3px 5px black;
 }
 
 .forms-wrapper {
   display: flex;
   align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 span {
@@ -29,14 +37,27 @@ span {
 }
 
 .smurf-form {
+  background-color: white;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 45%;
   max-width: 500px;
-  border: 2px solid #017ed2;
+  /* border: 2px solid #017ed2; */
   border-radius: 20px;
   margin: 10px auto;
   padding: 10px 1%;
+  box-shadow: 3px 3px 5px black;
+}
+
+select {
+  padding: 5px 1%;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px 1%;
+  margin-bottom: 10px;
 }
 
 .smurfs-wrapper {
@@ -47,11 +68,13 @@ span {
 }
 
 .smurf-card {
-  border: 2px solid #017ed2;
+  background-color: white;
+  /* border: 2px solid #017ed2; */
   border-radius: 20px;
   width: 300px;
   padding: 10px 1%;
   margin: 10px 1%;
+  box-shadow: 3px 3px 5px black;
 }
 
 button {
@@ -71,4 +94,14 @@ button:hover {
 
 .card-button {
   margin: 0 1%;
+}
+
+h4 {
+  margin: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .forms-wrapper {
+    flex-direction: column;
+  }
 }
