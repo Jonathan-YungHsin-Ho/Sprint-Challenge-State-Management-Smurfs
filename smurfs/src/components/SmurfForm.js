@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 // import { withFormik, Form, Field } from 'formik';
 // import * as Yup from 'yup';
 
 import { postData, getData } from '../store/actions';
 
-function SmurfForm({ errors }) {
+function SmurfForm() {
   const [newSmurf, setNewSmurf] = useState({});
   const dispatch = useDispatch();
 

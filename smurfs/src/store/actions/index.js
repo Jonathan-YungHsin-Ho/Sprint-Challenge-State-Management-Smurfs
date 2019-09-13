@@ -4,10 +4,6 @@ export const FETCHING_DATA_START = 'FETCHING_DATA_START';
 export const FETCHING_DATA_SUCCESS = 'FETCHING_DATA_SUCCESS';
 export const FETCHING_DATA_FAILURE = 'FETCHING_DATA_FAILURE';
 
-// export const POST_DATA_START = 'POST_DATA_START';
-// export const POST_DATA_SUCCESS = 'POST_DATA_SUCCESS';
-// export const POST_DATA_FAILURE = 'POST_DATA_FAILURE';
-
 export const getData = () => dispatch => {
   dispatch({ type: FETCHING_DATA_START });
   axios
@@ -20,13 +16,17 @@ export const getData = () => dispatch => {
     });
 };
 
-export const postData = data => dispatch => {
-  // dispatch({ type: POST_DATA_START });
-  console.log(data);
+export const postData = data => () => {
+  // console.log(data);
   axios
     .post(`http://localhost:3333/smurfs`, data)
-    .then(res => {
-      console.log(res);
-    })
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+};
+
+export const deleteSmurf = id => () => {
+  axios
+    .delete(`http://localhost:3333/smurfs/${id}`)
+    .then(res => console.log(res))
     .catch(err => console.log(err));
 };
