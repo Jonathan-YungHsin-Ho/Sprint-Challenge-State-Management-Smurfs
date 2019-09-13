@@ -18,10 +18,20 @@ h1 {
   color: #017ed2;
 }
 
+.forms-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+span {
+  font-weight: bold;
+  align-self: center;
+}
+
 .smurf-form {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 45%;
   max-width: 500px;
   border: 2px solid #017ed2;
   border-radius: 20px;
@@ -51,6 +61,7 @@ button {
   border-radius: 12px;
   padding: 5px 5%;
   cursor: pointer;
+  outline: none;
 }
 
 button:hover {

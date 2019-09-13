@@ -18,12 +18,9 @@ export default function SmurfCard(props) {
       {/* <img src={props.smurf.img} /> */}
       <h4>Age: {props.smurf.age}</h4>
       <h4>Height: {props.smurf.height}</h4>
-      <div>
-        <button className='card-button'>Modsmurf</button>
-        <button onClick={handleDelete} className='card-button'>
-          Desmurf
-        </button>
-      </div>
+      <button onClick={handleDelete} className='card-button'>
+        Desmurf!
+      </button>
     </div>
   );
 }

@@ -17,7 +17,6 @@ export const getData = () => dispatch => {
 };
 
 export const postData = data => () => {
-  // console.log(data);
   axios
     .post(`http://localhost:3333/smurfs`, data)
     .then(res => console.log(res))
@@ -27,6 +26,13 @@ export const postData = data => () => {
 export const deleteSmurf = id => () => {
   axios
     .delete(`http://localhost:3333/smurfs/${id}`)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+};
+
+export const putData = (id, data) => () => {
+  axios
+    .put(`http://localhost:3333/smurfs/${id}`, data)
     .then(res => console.log(res))
     .catch(err => console.log(err));
 };

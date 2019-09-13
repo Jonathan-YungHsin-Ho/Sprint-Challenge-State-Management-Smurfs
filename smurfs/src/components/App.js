@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import SmurfForm from './SmurfForm';
+import SmurfMod from './SmurfMod';
 import SmurfList from './SmurfList';
 
 const App = () => {
@@ -12,7 +13,11 @@ const App = () => {
       <div>Start inside of your `src/index.js` file!</div>
       <div>Have fun!</div> */}
       <h1>WELSMURF TO SMURF VILLAGE!</h1>
-      <SmurfForm />
+      <div className='forms-wrapper'>
+        <SmurfForm />
+        <span>or...</span>
+        <SmurfMod />
+      </div>
       <SmurfList />
     </div>
   );
