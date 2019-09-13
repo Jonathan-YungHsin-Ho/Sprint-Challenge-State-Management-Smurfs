@@ -28,7 +28,7 @@ h1 {
   display: flex;
   align-items: stretch;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 span {
@@ -46,7 +46,7 @@ span {
   /* border: 2px solid #017ed2; */
   border-radius: 20px;
   margin: 10px auto;
-  padding: 10px 1%;
+  padding: 10px 2%;
   box-shadow: 3px 3px 5px black;
 }
 
@@ -103,5 +103,9 @@ h4 {
 @media screen and (max-width: 599px) {
   .forms-wrapper {
     flex-direction: column;
+  }
+
+  .smurf-form {
+    width: 90%;
   }
 }
