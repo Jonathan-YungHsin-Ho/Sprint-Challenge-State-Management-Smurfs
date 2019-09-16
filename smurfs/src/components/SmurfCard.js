@@ -1,16 +1,18 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { deleteSmurf, getData } from '../store/actions';
 
 export default function SmurfCard(props) {
   const dispatch = useDispatch();
+  const isDeleting = useSelector(state => state.isDeleting);
 
   const handleDelete = e => {
     e.preventDefault();
     dispatch(deleteSmurf(props.smurf.id));
-    dispatch(getData());
   };
+
+  useEffect(() => dispatch(getData()), [isDeleting]);
 
   return (
     <div className='smurf-card'>

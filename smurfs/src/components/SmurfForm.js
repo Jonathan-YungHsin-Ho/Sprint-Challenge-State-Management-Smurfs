@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { withFormik, Form, Field } from 'formik';
 // import * as Yup from 'yup';
 
@@ -8,6 +8,7 @@ import { postData, getData } from '../store/actions';
 function SmurfForm() {
   const [newSmurf, setNewSmurf] = useState({});
   const dispatch = useDispatch();
+  const isPosting = useSelector(state => state.isPosting);
 
   const handleChange = e => {
     setNewSmurf({ ...newSmurf, [e.target.name]: e.target.value });
@@ -16,8 +17,9 @@ function SmurfForm() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(postData(newSmurf));
-    dispatch(getData());
   };
+
+  useEffect(() => dispatch(getData()), [isPosting]);
 
   return (
     // <Form>

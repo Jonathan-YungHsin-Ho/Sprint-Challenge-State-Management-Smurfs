@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { putData, getData } from '../store/actions';
@@ -9,6 +9,7 @@ export default function SmurfMod() {
   const dispatch = useDispatch();
 
   const data = useSelector(state => state.data);
+  const isPutting = useSelector(state => state.isPutting);
 
   const handleSelect = e => {
     const targetSmurf = JSON.parse(e.target.value);
@@ -28,8 +29,9 @@ export default function SmurfMod() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(putData(id, smurfToUpdate));
-    dispatch(getData());
   };
+
+  useEffect(() => dispatch(getData()), [isPutting]);
 
   return (
     <div className='smurf-form'>
